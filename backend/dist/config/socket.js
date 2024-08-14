@@ -10,7 +10,7 @@ const app_1 = __importDefault(require("../app"));
 const server = node_http_1.default.createServer(app_1.default);
 exports.io = new socket_io_1.Server(server, {
     cors: {
-        origin: "http://localhost:5173"
+        origin: process.env.WHITELIST_ORIGIN
     }
 });
 exports.default = server;
