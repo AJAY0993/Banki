@@ -18,6 +18,7 @@ const roomService_1 = __importDefault(require("./roomService"));
 const getRandomNumber_1 = __importDefault(require("../utils/getRandomNumber"));
 const data_1 = __importDefault(require("../utils/data"));
 socket_1.io.on("connection", (socket) => {
+    console.log("A user joined");
     socket.on("event:createRoom", () => {
         const newRoom = roomService_1.default.createRoom((0, uuid_1.v4)());
         socket.emit("event:roomCreated", newRoom.roomId);

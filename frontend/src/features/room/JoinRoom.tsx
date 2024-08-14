@@ -5,6 +5,7 @@ function JoinRoom() {
   const navigate = useNavigate()
   const join = () => {
     const roomId = prompt("Enter room id")
+    if(roomId === null) return
     navigate(`/${roomId}`)
   }
   return (

@@ -16,7 +16,6 @@ function useSignin() {
   } = useMutation({
     mutationFn: signinApi,
     onSuccess: (data: User) => {
-      console.log(data)
       toast.success(`${data?.username || ""} welcome`)
       dispatch(signinReducer(data))
       navigate("/")

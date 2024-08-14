@@ -43,9 +43,7 @@ const isAuthenticated = (req, res, next) => __awaiter(void 0, void 0, void 0, fu
             });
         }
         try {
-            console.log("before decode");
             const decode = yield jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
-            console.log(decode);
             // @ts-ignore
             req.body.user = { id: decode.id };
         }

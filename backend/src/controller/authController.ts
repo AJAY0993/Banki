@@ -17,7 +17,9 @@ export const signup = async (req: Request, res: Response) => {
     })
     res.cookie("jwt", token, {
       secure: process.env.NODE_ENV === "development" ? false : true,
-      httpOnly: true
+      httpOnly: true,
+      // sameSite:"none"
+  
     })
     res.status(201).json({
       status: "success",
@@ -56,7 +58,8 @@ export const signin = async (req: Request, res: Response) => {
     })
     res.cookie("jwt", token, {
       secure: process.env.NODE_ENV === "development" ? false : true,
-      httpOnly: true
+      httpOnly: true,
+      // sameSite:"none"
     })
     res.status(201).json({
       status: "success",

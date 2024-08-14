@@ -5,6 +5,7 @@ import getRandomNumber from "../utils/getRandomNumber"
 import cards from "../utils/data"
 
 io.on("connection", (socket) => {
+  console.log("A user joined")
   socket.on("event:createRoom", () => {
     const newRoom = Room.createRoom(v4())
     socket.emit("event:roomCreated", newRoom.roomId)

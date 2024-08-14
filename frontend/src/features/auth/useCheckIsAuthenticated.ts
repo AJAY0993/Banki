@@ -17,9 +17,7 @@ function useCheckIsUserAuthenticatedUser() {
       }
     },
     onError: (err) => {
-      console.log(err)
       dispatch(signout())
-      console.log(err)
     },
     onSettled: () => setIsChecking(false)
   })

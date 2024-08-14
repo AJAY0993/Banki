@@ -7,7 +7,6 @@ export const getAuthenticatedUser = async (): Promise<User | undefined> => {
     const res: AxiosResponse<{ user: User }> = await axios("users/me")
     return res.data.user
   } catch (error) {
-    console.log(error)
     if (error instanceof AxiosError) {
       throw new Error(error.response?.data.message)
     }

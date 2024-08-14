@@ -1,6 +1,6 @@
 import { io } from "socket.io-client"
 
-const URL: string = import.meta.env.VITE_API_URL
+const URL: string = import.meta.env.SOCKET_URL
 
 const socket = io(URL)
 

@@ -34,10 +34,10 @@ function BankiRoom() {
       }
     })
     socket.emit("event:joinedRoom", roomId)
-    return () => {
-      socket.removeListener("event:roomJoined")
-      socket.removeListener("event:roomChecked")
-    }
+    // return () => {
+    //   socket.removeListener("event:roomJoined")
+    //   socket.removeListener("event:roomChecked")
+    // }
   }, [])
   if (loading) return "Wait for a while"
   if (!available) return `No room found with id ${roomId}`

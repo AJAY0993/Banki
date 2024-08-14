@@ -15,9 +15,7 @@ const isAuthenticated = async (
       })
     }
     try {
-      console.log("before decode")
       const decode = await jwt.verify(token, process.env.JWT_SECRET)
-      console.log(decode)
       // @ts-ignore
       req.body.user = { id: decode.id }
     } catch (error) {
