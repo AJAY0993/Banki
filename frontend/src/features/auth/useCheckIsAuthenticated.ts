@@ -16,7 +16,7 @@ function useCheckIsUserAuthenticatedUser() {
         toast.success(`Welcome back  ${data.username}`)
       }
     },
-    onError: (err) => {
+    onError: () => {
       dispatch(signout())
     },
     onSettled: () => setIsChecking(false)
