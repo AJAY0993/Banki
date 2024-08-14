@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query"
-import { signout as signoutReducer, User } from "./authSlice"
+import { signout as signoutReducer } from "./authSlice"
 import toast from "react-hot-toast"
 import { signout as signoutApi } from "../../services/authApi"
 import { useAppDispatch } from "../../redux/hooks"
