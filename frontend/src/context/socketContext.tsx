@@ -23,6 +23,7 @@ function SocketProvider({ children }: SocketProviderProps) {
   const [isConnected, setIsConnected] = useState<boolean>(socket.connected)
   const value = { isConnected, socket }
   useEffect(() => {
+    socket.connect()
     const handleConnect = () => setIsConnected(true)
     const handleDisconnect = () => setIsConnected(false)
 

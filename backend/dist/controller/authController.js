@@ -54,7 +54,7 @@ const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.cookie("jwt", token, {
             secure: process.env.NODE_ENV === "development" ? false : true,
             httpOnly: true,
-            // sameSite:"none"
+            sameSite: "none"
         });
         res.status(201).json({
             status: "success",
@@ -95,7 +95,7 @@ const signin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.cookie("jwt", token, {
             secure: process.env.NODE_ENV === "development" ? false : true,
             httpOnly: true,
-            // sameSite:"none"
+            sameSite: "none"
         });
         res.status(201).json({
             status: "success",
@@ -116,7 +116,8 @@ const signout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         res.cookie("jwt", "", {
             secure: process.env.NODE_ENV === "development" ? false : true,
-            httpOnly: true
+            httpOnly: true,
+            sameSite: "none"
         });
         res.status(201).json({
             status: "success",
